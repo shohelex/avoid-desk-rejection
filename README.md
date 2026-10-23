@@ -63,16 +63,16 @@ Then run `/reload-plugins` in any open session.
 
 | Section | What it catches |
 | --- | --- |
-| A. Front matter | A contribution buried below background; a title that names only the area; contributions that cannot be refuted |
-| S. Scope | A topic that matches but a contribution type the journal does not grade; framing that files the paper with the wrong community; explicit exclusions |
-| N. Novelty | No stated delta over the closest work; "first" claims; features the platform already provides; assembled off-the-shelf parts |
-| M. Methods | Benchmarking crimes; baselines copied from other papers; simulation-only results; no threat model; ML-in-security pitfalls |
-| C. Compliance | Missing declarations and AI-use statements; shrunk margins; template leftovers; stray files; hidden text aimed at AI reviewers |
+| A. Front matter | A contribution buried below background; a title that names only the area; contributions that cannot be refuted; hype words the design cannot back |
+| S. Scope | A topic that matches but a contribution type the journal does not grade; framing that files the paper with the wrong community; explicit exclusions; a very recent near-twin in the same journal; a target the paper's own references never cite; the wrong article type or a sister journal that fits better |
+| N. Novelty | No stated delta over the closest work; "first" claims; features the platform already provides; assembled off-the-shelf parts; a question led by the tool; surveys that come too early or duplicate a recent review |
+| M. Methods | Benchmarking crimes; baselines copied from other papers; simulation-only results; no threat model; ML-in-security pitfalls; claims the design cannot support |
+| C. Compliance | Missing declarations and AI-use statements; shrunk margins; template leftovers; stray files; hidden text aimed at AI reviewers; text and figure reuse; another journal's name or template left in; broken anonymity; errors no co-author caught; missing reporting checklists |
 | R. References | Hallucinated references: DOIs or arXiv IDs that point to the wrong paper, references found in no database, wrong metadata, retracted work, citations that do not support the claim |
 | L. Cover letter | Asserting fit instead of showing it; undisclosed preprints or companion papers |
-| T. Tier | A venue whose bar is above the paper; resubmitting without changing what was rejected |
+| T. Tier | A venue whose bar is above the paper; resubmitting without changing what was rejected; work too preliminary for a journal |
 
-Each test cites its source: editor and publisher guidance, venue calls for papers, and well-known writing and evaluation guides (Heilmeier, Peyton Jones, Widom, Levin & Redell, van der Kouwe et al., Arp et al.).
+Each test cites its source: editor and publisher guidance, venue calls for papers, well-known writing and evaluation guides (Heilmeier, Peyton Jones, Widom, Levin & Redell, van der Kouwe et al., Arp et al.), and talks by journal editors, including the editor-in-chief of IEEE Access and a former IEEE President, with every quote checked against the talk's transcript.
 
 ## Security
 
