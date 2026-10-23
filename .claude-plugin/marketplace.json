@@ -1,0 +1,17 @@
+{
+  "name": "avoid-desk-rejection",
+  "owner": {
+    "name": "shohelex",
+    "url": "https://github.com/shohelex"
+  },
+  "description": "A pre-submission desk-rejection check for research papers.",
+  "plugins": [
+    {
+      "name": "avoid-desk-rejection",
+      "source": "./",
+      "description": "Run /scope-check on a manuscript and a target journal to test scope fit, novelty, front matter, methods, compliance, cover letter and tier before submitting.",
+      "category": "productivity",
+      "tags": ["research", "academic-writing", "peer-review", "journal-submission"]
+    }
+  ]
+}

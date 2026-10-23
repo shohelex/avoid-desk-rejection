@@ -1,0 +1,19 @@
+{
+  "name": "avoid-desk-rejection",
+  "version": "0.1.0",
+  "description": "Pre-submission desk-rejection check for research papers: run /scope-check on a manuscript and a target journal to test scope fit, novelty, abstract and contributions, methods, compliance, cover letter and tier before you submit.",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "academic-writing",
+    "peer-review",
+    "desk-rejection",
+    "journal-submission"
+  ],
+  "author": {
+    "name": "Md Shohel Khan",
+    "url": "https://github.com/shohelex"
+  },
+  "homepage": "https://github.com/shohelex/avoid-desk-rejection",
+  "repository": "https://github.com/shohelex/avoid-desk-rejection"
+}
