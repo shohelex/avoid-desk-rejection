@@ -104,7 +104,7 @@ Aim for zero benchmarking crimes, or explain each one. Tier-1 systems-security p
 
 **M8. Simulation checked.** *Pass:* simulated results are validated against at least one real run, and the simulator's assumptions are stated. *Source:* "a simulation is always a model, and contains a set of assumptions" (Heiser); network models "might produce results that are off by an order of magnitude" (Beránek et al., https://arxiv.org/abs/2204.07211). If no real run is possible, the paper says why and labels the results as simulated. *Source:* "If you just do simulation, it's not enough." (Saifur Rahman, IEEE President 2023, "How to Get Published in IEEE Journals", https://www.youtube.com/watch?v=eXZGP1ie5C0).
 
-**M9. Artifact.** *Pass:* a public repository with a pinned commit, a README, a license and "The exact commands to run to reproduce each claim from the paper" (EuroSys badges, https://sysartifacts.github.io/eurosys2025/badges). No credentials in code or history.
+**M9. Artifact.** *Pass:* a public repository with a pinned commit, a README, a license and "The exact commands to run to reproduce each claim from the paper" (EuroSys badges, https://sysartifacts.github.io/eurosys2025/badges). No credentials in code or history: list every file the secret pre-scan flagged (`sensitive-patterns.md`), by path and pattern group, never the value.
 
 ### Cloud, Kubernetes and scheduling papers
 

@@ -1,6 +1,6 @@
 {
   "name": "avoid-desk-rejection",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Pre-submission desk-rejection check for research papers: run /scope-check on a manuscript and a target journal to test scope fit, novelty, abstract and contributions, methods, compliance, cover letter and tier before you submit.",
   "license": "MIT",
   "keywords": [
