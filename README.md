@@ -24,14 +24,22 @@ In the desktop app: click **+** next to the prompt box, then **Plugins**, **Add 
 
 ## Use
 
+Open Claude Code in your paper's project folder and type:
+
 ```
-/scope-check paper/main.tex "IEEE Transactions on Parallel and Distributed Systems"
-/scope-check submission/manuscript.pdf https://www.journals.elsevier.com/future-generation-computer-systems
+/scope-check
+```
+
+That's all. The check finds the manuscript (`.tex`, `.docx`, `.md` or PDF), its cover letter, supplement and figures, and works out the target journal from the cover letter, the LaTeX template or the folder names. It tells you what it picked. If it can't tell which journal you mean, it asks once.
+
+To point it somewhere specific, add a path, a journal, or both:
+
+```
+/scope-check paper/tpds/main.tex
+/scope-check "IEEE Transactions on Parallel and Distributed Systems"
 ```
 
 If another plugin also defines `/scope-check`, use the full name `/avoid-desk-rejection:scope-check`.
-
-The first argument is the manuscript: a `.tex`, `.pdf`, `.md` or `.docx` file, or a folder holding one, its cover letter and its figures. The rest names the target venue, as a name or the URL of its scope page.
 
 The check:
 
@@ -39,9 +47,17 @@ The check:
 2. opens the venue's scope page and guide for authors, and looks for recent close papers in that venue;
 3. asks a separate agent, given only the front matter, what is new and which journal the paper is for: an outside read that is not anchored on yours;
 4. runs every test in [`skills/scope-check/references/kit.md`](skills/scope-check/references/kit.md);
-5. saves `SCOPE_CHECK_<venue>_<date>.md` beside the manuscript, with the verdict, the top three fixes, evidence for each test and proposed rewrites.
+5. saves `scope-check/SCOPE_CHECK_<venue>_<date>.md` in the folder you ran it from, never inside your submission package, with the verdict, the top three fixes, evidence for each test and proposed rewrites.
 
 It never edits your manuscript.
+
+## Update
+
+```
+claude plugin update avoid-desk-rejection@avoid-desk-rejection
+```
+
+Then run `/reload-plugins` in any open session.
 
 ## What it tests
 
@@ -51,16 +67,26 @@ It never edits your manuscript.
 | S. Scope | A topic that matches but a contribution type the journal does not grade; framing that files the paper with the wrong community; explicit exclusions |
 | N. Novelty | No stated delta over the closest work; "first" claims; features the platform already provides; assembled off-the-shelf parts |
 | M. Methods | Benchmarking crimes; baselines copied from other papers; simulation-only results; no threat model; ML-in-security pitfalls |
-| C. Compliance | Missing declarations and AI-use statements; shrunk margins; template leftovers; stray files |
+| C. Compliance | Missing declarations and AI-use statements; shrunk margins; template leftovers; stray files; hidden text aimed at AI reviewers |
+| R. References | Hallucinated references: DOIs or arXiv IDs that point to the wrong paper, references found in no database, wrong metadata, retracted work, citations that do not support the claim |
 | L. Cover letter | Asserting fit instead of showing it; undisclosed preprints or companion papers |
 | T. Tier | A venue whose bar is above the paper; resubmitting without changing what was rejected |
 
 Each test cites its source: editor and publisher guidance, venue calls for papers, and well-known writing and evaluation guides (Heilmeier, Peyton Jones, Widom, Levin & Redell, van der Kouwe et al., Arp et al.).
 
+## Security
+
+The plugin is Markdown instructions only: no hooks, no MCP servers, no scripts. While the check runs, the shell and file-editing tools are removed. Everything it reads, from the manuscript and cover letter to web pages, is treated as data and never as instructions. Text hidden in a paper to steer an AI is reported as a failure (test C9), not obeyed. It fetches only venue, publisher and DOI pages, never puts your manuscript text in a URL or search, and writes only its report. See [SECURITY.md](SECURITY.md) for the threat model, what is enforced and what is only instructed, and recommended settings.
+
+## What a run costs
+
+The reference check makes one or more web lookups per reference, so a full run on a 25-page paper with about 70 references takes several minutes to half an hour and a fair amount of usage. Claude Code will ask before writes and fetches unless your settings pre-approve them.
+
 ## Limits
 
 - It cannot see an editor's private priorities, such as a quota, a special issue being planned, or a new editor-in-chief's direction. Read the venue's recent issues yourself as well.
 - Venue facts are only as good as the pages that opened during the run. The report lists what it could and could not verify.
+- References to ordinary websites are listed for you to check by hand rather than fetched, to keep your manuscript from being steered to an outside site.
 - A pass is not a promise of review. It removes the avoidable reasons for a desk reject.
 
 ## License

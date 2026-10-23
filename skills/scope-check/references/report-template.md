@@ -35,6 +35,14 @@
 | A1 | Desk simulation | PASS / FIX / CAN'T TELL | … | … |
 | … | | | | |
 
+## Reference check (section R)
+
+Checked <n> · verified <n> · mismatched <n> · unverified <n> · retracted <n>
+
+| Reference (key or number) | Problem | Evidence | Action |
+| --- | --- | --- | --- |
+| <key> | DOI resolves to a different paper / not found in Crossref, OpenAlex or arXiv / metadata mismatch / retracted / does not support the claim | <what the database returned> | <check by hand, correct or remove> |
+
 ## Proposed rewrites
 
 **Title:** <…>
