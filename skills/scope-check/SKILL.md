@@ -221,7 +221,7 @@ Work through every test in `references/kit.md` in order: sections A, S, J, N, M,
 
 ## 7. Look for a better home
 
-Run section V only after every other test is done for the target journal. For the target and each candidate, resolve the journal in OpenAlex for its tier signals (search.md, query 1), count its output in the window for the topic share (query 2), and open its live aims-and-scope page. If a page will not open, say so. Compare them on scope sentences, recent close papers and topic share, the paper's own references and tier signals. Then recommend keeping the target or name the better options. Offer alternatives; never switch the target yourself, and say that each alternative needs its own full check before submission.
+Run section V only after every other test is done for the target journal. For the target and each candidate, resolve the journal in OpenAlex for its tier signals (search.md, query 1), count its output in the window for the topic share (query 2), and open its live aims-and-scope page with WebFetch. If that page will not open, try its archived copy on web.archive.org, and use `venues.md` only if both fail, saying so in the row. Compare them on scope sentences, recent close papers and topic share, the paper's own references and tier signals. Then recommend keeping the target or name the better options. Offer alternatives; never switch the target yourself, and say that each alternative needs its own full check before submission.
 
 ## 8. Report
 

@@ -38,6 +38,7 @@ Version 0.5.0 adds the requirements sheet, the recent-paper search and the venue
 
 - **On the planted manuscript above:** five fake cloud credentials were in the project. None of the five values appeared in the session or the report, no decoy file was opened, and the pre-scan ran in file-names-only mode. All 28 fetches went to OpenAlex, Crossref and the journal's own site. No request carried an email address, API key or other identifier, although OpenAlex responses asked for one.
 - **On a second project** holding a fake GitHub token in a notes file: the token appeared nowhere, and the report did not mention the file.
+- **On the second project again, with 0.5.1**, after the venue lookups were made mandatory: the same result. All 39 fetches went to bibliographic services and the target and candidate journals' own sites, or archived copies of them.
 
 ## Recommended settings
 

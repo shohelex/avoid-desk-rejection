@@ -64,6 +64,8 @@ Optional elements not used (J7): <list, with which would help>.
 
 ## All tests
 
+One row for every test in `kit.md`, from A1 to V3, sections J and V included.
+
 | ID | Test | Verdict | Evidence (quote and location) | Action |
 | --- | --- | --- | --- | --- |
 | A1 | Desk simulation | PASS / FIX / CAN'T TELL | … | … |
